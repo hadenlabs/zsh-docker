@@ -2,10 +2,11 @@
 All notable changes to this project will be documented in this file.
 This file uses change log convention from [Keep a CHANGELOG](http://keepachangelog.com).
 
-## [Unreleased][unreleased]
+## [Unreleased]
 
+## [0.0.1] - 2017-05-05
 
-[unreleased]: https://github.com/luismayta/zsh-docker-aliases/compare/0.0.1...HEAD
+[Unreleased]: https://github.com/luismayta/zsh-docker-aliases/compare/0.0.1...HEAD
 [0.0.1]: https://github.com/luismayta/zsh-docker-aliases/compare/0.0.0...0.0.1
 
 [CHANGELOG.md]: CHANGELOG.md
