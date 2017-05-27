@@ -1,6 +1,8 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
+alias d='docker'
+
 # Images
 
 alias di='docker images'
