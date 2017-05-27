@@ -1,11 +1,9 @@
 # Plugin Zsh zsh-docker-aliases
 
-<span class="badges" align="center">
 [![Build Status](https://travis-ci.org/luismayta/zsh-docker-aliases.svg)](https://travis-ci.org/luismayta/zsh-docker-aliases)
 [![Stories in Ready](https://badge.waffle.io/luismayta/zsh-docker-aliases.svg?label=ready&title=Ready)](http://waffle.io/luismayta/zsh-docker-aliases)
 [![GitHub issues](https://img.shields.io/github/issues/luismayta/zsh-docker-aliases.svg)](https://github.com/luismayta/zsh-docker-aliases/issues)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](LICENSE)
-</span>
 
 
 ZSH plugin
@@ -36,8 +34,6 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 ## Credits
 
 Made with love :heart: by luismayta
-
-<!-- Other -->
 
 [link-author]: https://github.com/luismayta
 [link-contributors]: contributors
