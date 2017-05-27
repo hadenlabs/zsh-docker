@@ -11,6 +11,7 @@ WGET = wget
 
 # Bin scripts
 CLEAN = $(shell) $(SCRIPT_DIR)/clean.sh
+GRIP = $(shell) $(SCRIPT_DIR)/grip.sh
 PYENV = $(shell) $(SCRIPT_DIR)/pyenv.sh
 INSTALL = $(shell) $(SCRIPT_DIR)/install.sh
 TEST = $(shell) $(SCRIPT_DIR)/test.sh
@@ -32,6 +33,10 @@ distclean: clean
 
 environment:
 	$(PYENV)
+
+
+grip:
+	$(GRIP)
 
 
 maintainer-clean: distclean
