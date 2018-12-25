@@ -1,4 +1,5 @@
 # Path-based git attributes
+
 # https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html
 
 ## Test/documentation
@@ -132,3 +133,12 @@ bin/* text eol=lf
 *.pyc       binary
 *.pdf       binary
 *.bz2       binary
+*.webm      binary
+*.class     binary
+*.dll       binary
+*.ear       binary
+*.jar       binary
+*.so        binary
+*.war       binary
+*.xls       binary
+*.xlsx       binary
