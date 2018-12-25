@@ -1,0 +1,15 @@
+# Docker Compose
+# https://docs.docker.com/compose/
+#
+# Usage: test up
+
+version: "3"
+services:
+  app:
+    image: zsh-docker-aliases-app-test:0.1.0
+    environment: &environment
+      - STAGE=testing
+    build:
+      args:
+        stage: test
+        version: 0.1.0

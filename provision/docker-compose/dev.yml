@@ -1,0 +1,28 @@
+# Docker Compose
+# https://docs.docker.com/compose/
+
+version: "3"
+services:
+  # Python
+  app:
+    environment: &environment
+      - STAGE=local
+    image: zsh-docker-aliases-app-dev:0.1.0
+    build:
+      args:
+        stage: dev
+        version: 0.1.0
+
+  check:
+    image: zsh-docker-aliases-check-dev:0.1.0
+    environment: *environment
+    build:
+      context: .
+      dockerfile: provision/docker/check/Dockerfile
+      args:
+        stage: dev
+        version: 0.1.0
+    volumes:
+      - .:/usr/src
+    env_file:
+      - .env
