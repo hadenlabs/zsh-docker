@@ -1,48 +1,73 @@
-# Makefile for zsh-docker-aliases.
+#
+# See ./CONTRIBUTING.rst
+#
+
+OS := $(shell uname)
+.PHONY: help build up requirements clean lint test help
+.DEFAULT_GOAL := help
+
+PROJECT := zsh-docker-aliases
+
+PYTHON_VERSION=3.6.4
+PYENV_NAME="${PROJECT}"
 
 # Configuration.
-SHELL = /bin/bash
-ROOT_DIR = $(shell pwd)
-BIN_DIR = $(ROOT_DIR)/bin
-DATA_DIR = $(ROOT_DIR)/var
-SCRIPT_DIR = $(ROOT_DIR)/script
+SHELL := /bin/bash
+ROOT_DIR=$(shell pwd)
+MESSAGE:=🍺️
+MESSAGE_HAPPY:="${MESSAGE} Happy Coding"
+SOURCE_DIR=$(ROOT_DIR)/
+REQUIREMENTS_DIR=$(ROOT_DIR)/requirements
+PROVISION_DIR:=$(ROOT_DIR)/provision
+FILE_README:=$(ROOT_DIR)/README.rst
+KEYS_DIR:="${HOME}/.ssh"
+PATH_DOCKER_COMPOSE:=provision/docker-compose
 
-WGET = wget
+pip_install := pip install -r
+docker-compose:=docker-compose -f docker-compose.yml
 
-# Bin scripts
-CLEAN = $(shell) $(SCRIPT_DIR)/clean.sh
-GRIP = $(shell) $(SCRIPT_DIR)/grip.sh
-PYENV = $(shell) $(SCRIPT_DIR)/pyenv.sh
-INSTALL = $(shell) $(SCRIPT_DIR)/install.sh
-TEST = $(shell) $(SCRIPT_DIR)/test.sh
-LINGUIST = $(shell) $(SCRIPT_DIR)/linguist.sh
+include extras/make/*.mk
 
-install:
-	$(INSTALL)
-
+help:
+	@echo '${MESSAGE} Makefile for ${PROJECT}'
+	@echo ''
+	@echo 'Usage:'
+	@echo '    environment               create environment with pyenv'
+	@echo '    clean                     remove files of build'
+	@echo '    setup                     install requirements'
+	@echo ''
+	@make docker.help
+	@make docs.help
+	@make test.help
 
 clean:
-	$(CLEAN)
+	@echo "$(TAG)"Cleaning up"$(END)"
+ifneq (Darwin,$(OS))
+	@sudo rm -rf .tox *.egg *.egg-info dist build .coverage .eggs .mypy_cache
+	@sudo rm -rf docs/build
+	@sudo find . -name '__pycache__' -delete -print -o -name '*.pyc' -delete -print -o -name '*.pyo' -delete -print -o -name '*~' -delete -print -o -name '*.tmp' -delete -print
+else
+	@rm -rf .tox *.egg *.egg-info dist build .coverage .eggs .mypy_cache
+	@rm -rf docs/build
+	@find . -name '__pycache__' -delete -print -o -name '*.pyc' -delete -print -o -name '*.pyo' -delete -print -o -name '*~' -delete -print -o -name '*.tmp' -delete -print
+endif
+	@echo
 
+setup: clean
+	$(pip_install) "${REQUIREMENTS_DIR}/setup.txt"
+	@if [ -e "${REQUIREMENTS_DIR}/private.txt" ]; then \
+			$(pip_install) "${REQUIREMENTS_DIR}/private.txt"; \
+	fi
+	pre-commit install
+	cp -rf .hooks/prepare-commit-msg .git/hooks/
+	@if [ ! -e ".env" ]; then \
+		cp -rf .env-sample .env;\
+	fi
 
-distclean: clean
-	rm -rf $(ROOT_DIR)/lib
-	rm -rf $(ROOT_DIR)/*.egg-info
-	rm -rf $(ROOT_DIR)/demo/*.egg-info
-
-
-environment:
-	$(PYENV)
-
-
-grip:
-	$(GRIP)
-
-
-maintainer-clean: distclean
-	rm -rf $(BIN_DIR)
-	rm -rf $(ROOT_DIR)/lib/
-
-
-linguist:
-	$(LINGUIST)
+environment: clean
+	@if [ -e "$(HOME)/.pyenv" ]; then \
+		eval "$(pyenv init -)"; \
+		eval "$(pyenv virtualenv-init -)"; \
+	fi
+	pyenv virtualenv ${PYTHON_VERSION} ${PYENV_NAME} >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
+	pyenv activate ${PYENV_NAME} >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
