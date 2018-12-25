@@ -3,7 +3,7 @@ zsh-docker-aliases
 
 |Build Status| |GitHub issues| |GitHub license|
 
-:Version: 0.0.2
+:Version: 0.1.0
 :Web: https://github.com/luismayta/zsh-docker-aliases
 :Download: http://github.com/luismayta/zsh-docker-aliases
 :Source: http://github.com/luismayta/zsh-docker-aliases

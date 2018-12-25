@@ -6,10 +6,10 @@
 version: "3"
 services:
   app:
-    image: zsh-docker-aliases-app-test:0.0.2
+    image: zsh-docker-aliases-app-test:0.1.0
     environment: &environment
       - STAGE=testing
     build:
       args:
         stage: test
-        version: 0.0.2
+        version: 0.1.0
