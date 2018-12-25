@@ -1,6 +1,13 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
+#
+# Defines transfer alias and provides easy command line file and folder sharing.
+#
+# Authors:
+#   Luis Mayta <slovacus@gmail.com>
+#
+
 alias d='docker'
 
 # Images
@@ -11,9 +18,13 @@ alias drmi='docker rmi'
 
 alias dbu='docker build'
 
-alias drmi_all='docker rmi $* $(docker images -a -q)'
+drmi_all() {
+    docker rmi $* $(docker images -a -q)
+}
 
-alias drmi_dang='docker rmi $* $(docker images -q -f "dangling=true")'
+drmi_dang() {
+    docker rmi $* $(docker images -q -f "dangling=true")
+}
 
 
 # Containers
@@ -48,3 +59,29 @@ alias dvls='docker volume ls $*'
 alias dvrm_all='docker volume rm $(docker volume ls -q)'
 
 alias dvrm_dang='docker volume rm $(docker volume ls -q -f "dangling=true")'
+
+# clean up
+docker-clean-containers() {
+    docker container ls -a -q || docker container stop $(docker container ls -a -q)
+    docker container ls -a -q || docker container rm $(docker container ls -a -q)
+}
+
+docker-clean-images() {
+    docker image ls -a -q || docker image rm $(docker image ls -a -q)
+}
+
+docker-clean-volumes() {
+    docker volume ls -q || docker volume rm $(docker volume ls -q)
+}
+
+docker-clean-networks(){
+    docker network ls -q || docker network rm $(docker network ls -q)
+}
+
+docker-clean-unused() {
+    docker system prune --all --force --volumes
+}
+
+docker-clean-all() {
+    docker container ls -a -q || docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes
+}
