@@ -62,6 +62,7 @@ alias dvrm_dang='docker volume rm $(docker volume ls -q -f "dangling=true")'
 
 # clean up
 docker-clean-containers() {
+    docker container ls -a -q || docker container stop $(docker container ls -a -q)
     docker container ls -a -q || docker container rm $(docker container ls -a -q)
 }
 
