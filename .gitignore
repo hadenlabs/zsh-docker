@@ -1,4 +1,123 @@
-.idea/
-.directory
-*.zwc
-*.old
+.env
+# Static and media development files.
+media/
+src/assets/
+static/
+staticfiles/
+
+# gulp-compass metafile
+css
+
+# Node metadata
+node_modules
+
+# SASS metadata
+*.sass-cache
+
+# Bower directory
+bower_components
+
+# Local databases
+*.sqlite3
+
+# Test databases
+*.sqlite3*
+
+# Redis
+*.rdb
+
+*.bak
+.#*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+.autoenv.zsh
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# ignored files Vagrant
+.vagrant
+# Files pid
+*.pid
+# files translate
+
+# files lock
+*.lock
+provision/ansible/roles/contrib
+.env
+
+.autoenv.zsh*.retry
+*.retry
+.wercker/
+dumps
+*.retry
+;
+.terraform
+.backup
+*.backup
+*.tfstate
+terraform.tfstate.d
+*.out
+*.log
+*.aux
+*.pdf
+*.zip
+
+# vendor
+vendor/*
+*.tar.gz
+# Zappa
+bot-lannister-*-template*.json
+*.DS_Store
