@@ -1,20 +1,25 @@
 version = '0.0.2'
 
-[[files."CHANGELOG.md"]]
+[[files."CHANGELOG.rst"]]
 search = """
-## [Unreleased]
-"""
-replace = """
-## [Unreleased]
-
-## [{{new_version}}] - {{utcnow | strftime('%Y-%m-%d')}}
+`Unreleased`_
++++++++++++++
 """
 
-[[files."CHANGELOG.md"]]
+
+replace = """
+`Unreleased`_
++++++++++++++
+
+`{{new_version}}`_ - {{utcnow | strftime('%Y-%m-%d')}}
+++++++++++++++++++++++
+"""
+
+[[files."CHANGELOG.rst"]]
 search = """
-[Unreleased]: https://github.com/luismayta/zsh-docker-aliases/compare/{{old_version}}...HEAD
+.. _`Unreleased`: https://github.com/luismayta/zsh-docker-aliases/compare/{{old_version}}...HEAD
 """
 replace = """
-[Unreleased]: https://github.com/luismayta/zsh-docker-aliases/compare/{{new_version}}...HEAD
-[{{new_version}}]: https://github.com/luismayta/zsh-docker-aliases/compare/{{old_version}}...{{new_version}}
+.. _`Unreleased`: https://github.com/luismayta/zsh-docker-aliases/compare/{{new_version}}...HEAD
+.. _`{{new_version}}`: https://github.com/luismayta/zsh-docker-aliases/compare/{{old_version}}...{{new_version}}
 """
