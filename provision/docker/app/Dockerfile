@@ -3,7 +3,6 @@ FROM python:3.6.4-alpine
 MAINTAINER Luis Mayta <@slovacus>
 
 ARG stage
-ARG version
 
 LABEL NAME zsh-docker-aliases-app-$stage
 LABEL VERSION $version
