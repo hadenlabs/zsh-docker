@@ -5,7 +5,6 @@ MAINTAINER Luis Mayta <@slovacus>
 ARG stage
 ARG version
 LABEL NAME zsh-docker-aliases-check-$stage
-LABEL VERSION $version
 
 COPY ./requirements/ /usr/src/requirements/
 COPY ./requirements.txt /usr/src/requirements.txt
