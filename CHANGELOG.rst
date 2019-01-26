@@ -8,6 +8,14 @@ This file uses change log convention from `keep a CHANGELOG`_.
 `Unreleased`_
 +++++++++++++
 
+`0.1.1`_ - 2019-01-26
+++++++++++++++++++++++
+
+Bug
+---
+
+- Fix: execute functions of docker
+
 `0.1.0`_ - 2018-12-25
 ++++++++++++++++++++++
 
@@ -19,7 +27,8 @@ This file uses change log convention from `keep a CHANGELOG`_.
 ++++++++++++++++++++++
 
 
-.. _`Unreleased`: https://github.com/luismayta/zsh-docker-aliases/compare/0.1.0...HEAD
+.. _`Unreleased`: https://github.com/luismayta/zsh-docker-aliases/compare/0.1.1...HEAD
+.. _`0.1.1`: https://github.com/luismayta/zsh-docker-aliases/compare/0.1.0...0.1.1
 .. _`0.1.0`: https://github.com/luismayta/zsh-docker-aliases/compare/0.0.2...0.1.0
 .. _0.0.2: https://gitlab.com/luismayta/zsh-docker-aliases/compare/0.0.1...0.0.2
 .. _0.0.1: https://gitlab.com/luismayta/zsh-docker-aliases/compare/0.0.0...0.0.1
