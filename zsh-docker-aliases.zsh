@@ -87,7 +87,19 @@ if (( $+commands[docker] )); then
         docker system prune --all --force --volumes
     }
 
-    function docker-clean-all {
+    docker-clean-images-dang () {
+        docker rmi $* $(docker images -q -f "dangling=true")
+    }
+
+    docker-clean-all () {
         docker container ls -a -q && docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes
+    }
+
+    docker-containers-stop-all () {
+        docker stop $* $(docker ps -q -f "status=running")
+    }
+
+    docker-volumes-rm-dang () {
+        docker volume rm $(docker volume ls -q -f "dangling=true")
     }
 fi
