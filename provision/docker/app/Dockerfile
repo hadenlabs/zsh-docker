@@ -5,7 +5,6 @@ MAINTAINER Luis Mayta <@slovacus>
 ARG stage
 
 LABEL NAME zsh-docker-aliases-app-$stage
-LABEL VERSION $version
 
 ENV PACKAGES bash \
         build-base \
