@@ -4,7 +4,7 @@ How To Contribute
 .. contents::
    :local:
 
-Contributions to zsh-pyenv are welcome.
+Contributions to zsh-docker-aliases are welcome.
 
 Getting Started
 ---------------
@@ -140,5 +140,5 @@ Try to keep history as linear as possible using a `rebase` merge strategy.
 
 #. Delete merged Branch
 
-.. _Issue: https://github.com/luismayta/zsh-pyenv/issues
-.. _Pull Request: https://github.com/luismayta/zsh-pyenv/pulls
+.. _Issue: https://github.com/luismayta/zsh-docker-aliases/issues
+.. _Pull Request: https://github.com/luismayta/zsh-docker-aliases/pulls
