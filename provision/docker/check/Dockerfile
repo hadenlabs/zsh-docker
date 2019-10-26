@@ -1,4 +1,4 @@
-FROM python:3.6.4
+FROM python:3.8.0-slim
 
 MAINTAINER Luis Mayta <@slovacus>
 
@@ -6,19 +6,20 @@ ARG stage
 ARG version
 LABEL NAME zsh-docker-aliases-check-$stage
 
-COPY ./requirements/ /usr/src/requirements/
-COPY ./requirements.txt /usr/src/requirements.txt
+COPY Pipfile* /usr/src/
 
 # set working directory to /usr/src/
 WORKDIR /usr/src/
 
-RUN apt-get update \
+RUN apt-get update -y \
   && apt-get -y install --no-install-recommends \
   # tools validation
   git-core \
   shellcheck \
   # install python dependencies
-  && pip install -r /usr/src/requirements/quality.txt \
+  && pip3 install pipenv \
+  && pipenv install --dev --skip-lock \
+  && pipenv shell --fancy \
   && apt-get purge \
-  && apt-get autoremove  \
+  && apt-get autoremove -y \
   && rm -rf /var/lib/apt/lists/*
