@@ -67,6 +67,19 @@ install this plugin by doing the following:
    running zsh session.
 3. Enjoy!
 
+Quick Start
+===========
+
+- Fork this repository
+
+Usage
+-----
+
+- Install dependences
+
+.. code-block:: bash
+
+  λ make setup
 
 Support
 -------
@@ -84,7 +97,7 @@ Team
 +---------------+
 | |Luis Mayta|  |
 +---------------+
-| `luis mayta`_ |
+| `Luis Mayta`_ |
 +---------------+
 
 License
@@ -127,10 +140,11 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. Links
 .. _`changelog`: CHANGELOG.rst
 .. _`contributors`: AUTHORS
-.. _`contributing`: CONTRIBUTING.rst
+.. _`contributing`: docs/source/CONTRIBUTING.rst
 
 .. _`hadenlabs`: https://github.com/hadenlabs
 .. _`luis mayta`: https://github.com/luismayta
+
 
 .. _`Github`: https://github.com/luismayta
 .. _`Linkedin`: https://www.linkedin.com/in/luismayta
