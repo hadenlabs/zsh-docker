@@ -64,23 +64,31 @@ alias dvrm_all='docker volume rm $(docker volume ls -q)'
 
 alias dvrm_dang='docker volume rm $(docker volume ls -q -f "dangling=true")'
 
-if (( $+commands[docker] )); then
+if [ -x "$(command which docker)" ]; then
     # clean up
     function docker-clean-containers {
-        docker container ls -a -q && docker container stop $(docker container ls -a -q)
-        docker container ls -a -q && docker container rm $(docker container ls -a -q)
+        local list_containers
+        list_containers=$(docker container ls -a -q)
+        docker container ls -a -q && docker container stop "${list_containers}"
+        docker container ls -a -q && docker container rm "${list_containers}"
     }
 
     function docker-clean-images {
-        docker image ls -a -q && docker image rm $(docker image ls -a -q)
+        local list_images
+        list_images=$(docker image ls -a -q)
+        docker image ls -a -q && docker image rm "${list_images}"
     }
 
     function docker-clean-volumes {
-        docker volume ls -q && docker volume rm $(docker volume ls -q)
+        local list_volumes
+        list_volumes=$(docker volume ls -q)
+        docker volume ls -q && docker volume rm "${list_volumes}"
     }
 
     function docker-clean-networks {
-        docker network ls -q && docker network rm $(docker network ls -q)
+        local list_networks
+        list_networks=$(docker network ls -q)
+        docker network ls -q && docker network rm "${list_networks}"
     }
 
     function docker-clean-unused {
@@ -92,7 +100,9 @@ if (( $+commands[docker] )); then
     }
 
     docker-clean-all () {
-        docker container ls -a -q && docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes
+        local list_containers
+        list_containers=$(docker container ls -a -q)
+        docker container ls -a -q && docker container stop "${list_containers}" && docker system prune -a -f --volumes
     }
 
     docker-containers-stop-all () {
