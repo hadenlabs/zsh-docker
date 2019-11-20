@@ -92,5 +92,5 @@ setup: clean
 
 environment: clean
 	@echo "=====> loading virtualenv ${PYENV_NAME}..."
-	@pipenv --venv || $(PIPENV_INSTALL) --skip-lock --python ${PYTHON_VERSION}
+	@pipenv --venv || $(PIPENV_INSTALL) --skip-lock --python=${PYTHON_VERSION}
 	@echo ${MESSAGE_HAPPY}
