@@ -12,6 +12,15 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
+plugin_dir=$(dirname "${0}":A)
+# shellcheck source=/dev/null
+source "${plugin_dir}"/src/helpers/messages.zsh
+
+if [ ! -x "$(command which docker)" ]; then
+    message_error "Please install docker"
+fi
+
+
 alias d='docker'
 
 # Images
@@ -22,11 +31,11 @@ alias drmi='docker rmi'
 
 alias dbu='docker build'
 
-drmi_all() {
+function drmi_all {
     docker rmi $* $(docker images -a -q)
 }
 
-drmi_dang() {
+function drmi_dang {
     docker rmi $* $(docker images -q -f "dangling=true")
 }
 
@@ -64,52 +73,52 @@ alias dvrm_all='docker volume rm $(docker volume ls -q)'
 
 alias dvrm_dang='docker volume rm $(docker volume ls -q -f "dangling=true")'
 
-if [ -x "$(command which docker)" ]; then
-    # clean up
-    function docker-clean-containers {
-        local list_containers
-        list_containers=$(docker container ls -a -q)
-        docker container ls -a -q && docker container stop "${list_containers}"
-        docker container ls -a -q && docker container rm "${list_containers}"
-    }
+# clean up
+function docker-clean-containers {
+    local list_containers
+    list_containers=$(docker container ls -a -q)
+    docker container ls -a -q && docker container stop "${list_containers}"
+    docker container ls -a -q && docker container rm "${list_containers}"
+}
 
-    function docker-clean-images {
-        local list_images
-        list_images=$(docker image ls -a -q)
-        docker image ls -a -q && docker image rm "${list_images}"
-    }
+function docker-clean-images {
+    local list_images
+    list_images=$(docker image ls -a -q)
+    docker image ls -a -q && docker image rm "${list_images}"
+}
 
-    function docker-clean-volumes {
-        local list_volumes
-        list_volumes=$(docker volume ls -q)
-        docker volume ls -q && docker volume rm "${list_volumes}"
-    }
+function docker-clean-volumes {
+    local list_volumes
+    list_volumes=$(docker volume ls -q)
+    docker volume ls -q && docker volume rm "${list_volumes}"
+}
 
-    function docker-clean-networks {
-        local list_networks
-        list_networks=$(docker network ls -q)
-        docker network ls -q && docker network rm "${list_networks}"
-    }
+function docker-clean-networks {
+    local list_networks
+    list_networks=$(docker network ls -q)
+    docker network ls -q && docker network rm "${list_networks}"
+}
 
-    function docker-clean-unused {
-        docker system prune --all --force --volumes
-    }
+function docker-clean-unused {
+    docker system prune --all --force --volumes
+}
 
-    docker-clean-images-dang () {
-        docker rmi $* $(docker images -q -f "dangling=true")
-    }
+function docker-clean-images-dang {
+    docker rmi $* $(docker images -q -f "dangling=true")
+}
 
-    docker-clean-all () {
-        local list_containers
-        list_containers=$(docker container ls -a -q)
-        docker container ls -a -q && docker container stop "${list_containers}" && docker system prune -a -f --volumes
-    }
+function docker-clean-all {
+    local list_containers
+    list_containers=$(docker container ls -a -q)
+    docker container ls -a -q \
+        && docker container stop "${list_containers}" \
+        && docker system prune -a -f --volumes
+}
 
-    docker-containers-stop-all () {
-        docker stop $* $(docker ps -q -f "status=running")
-    }
+function docker-containers-stop-all {
+    docker stop $* $(docker ps -q -f "status=running")
+}
 
-    docker-volumes-rm-dang () {
-        docker volume rm $(docker volume ls -q -f "dangling=true")
-    }
-fi
+docker-volumes-rm-dang () {
+    docker volume rm $(docker volume ls -q -f "dangling=true")
+}
