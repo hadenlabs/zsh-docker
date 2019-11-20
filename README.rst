@@ -172,3 +172,8 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
    :target: https://github.com/luismayta/zsh-docker-aliases
 .. |made| image:: https://img.shields.io/badge/Made%20with-Zsh-1f425f.svg
    :target: http://www.zsh.org
+
+.. Dependences:
+
+.. _Pyenv: https://github.com/pyenv/pyenv
+.. _Docker: https://www.docker.com/

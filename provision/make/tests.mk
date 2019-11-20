@@ -14,7 +14,7 @@ test: clean
 
 test.all: clean
 	@echo $(MESSAGE) Running tests on the current Python interpreter with coverage $(END)
-	$(docker-test-run) bash -c "$(PIPENV_RUN) pytest"
+	$(docker-test-run) bash -c "zunit"
 
 test.lint: clean
-	$(docker-test-run) bash -c "$(PIPENV_RUN) pre-commit run --all-files --verbose"
+	$(PIPENV_RUN) pre-commit run --all-files --verbose
