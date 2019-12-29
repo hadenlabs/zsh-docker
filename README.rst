@@ -20,7 +20,9 @@ Features
 Dependencies
 ------------
 
-List of applications:
+.. code-block:: bash
+
+    https://github.com/luismayta/zsh-functions
 
 Installation
 ------------
