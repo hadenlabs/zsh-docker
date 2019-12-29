@@ -12,10 +12,6 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
-plugin_dir=$(dirname "${0}":A)
-# shellcheck source=/dev/null
-source "${plugin_dir}"/src/helpers/messages.zsh
-
 if [ ! -x "$(command which docker)" ]; then
     message_error "Please install docker"
 fi
