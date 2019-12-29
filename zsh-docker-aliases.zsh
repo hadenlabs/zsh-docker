@@ -12,8 +12,8 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
-if [ ! -x "$(command which docker)" ]; then
-    message_error "Please install docker"
+if ! type -p docker > /dev/null; then
+    message_warning "Please install docker"
 fi
 
 
