@@ -62,27 +62,13 @@ help:
 	@echo ''
 	@echo 'Usage:'
 	@echo '    environment               create environment with pyenv'
-	@echo '    clean                     remove files of build'
 	@echo '    setup                     install requirements'
 	@echo ''
 	@make docker.help
 	@make docs.help
 	@make test.help
 
-clean:
-	@echo "=====> clean files unnecessary for ${TEAM}..."
-ifneq (Darwin,$(OS))
-	@sudo rm -rf .tox *.egg *.egg-info dist build .coverage .eggs .mypy_cache
-	@sudo rm -rf docs/build
-	@sudo find . -name '__pycache__' -delete -print -o -name '*.pyc' -delete -print -o -name '*.pyo' -delete -print -o -name '*~' -delete -print -o -name '*.tmp' -delete -print
-else
-	@rm -rf .tox *.egg *.egg-info dist build .coverage .eggs .mypy_cache
-	@rm -rf docs/build
-	@find . -name '__pycache__' -delete -print -o -name '*.pyc' -delete -print -o -name '*.pyo' -delete -print -o -name '*~' -delete -print -o -name '*.tmp' -delete -print
-endif
-	@echo "=====> end clean files unnecessary for ${TEAM}..."
-
-setup: clean
+setup:
 	@echo "=====> install packages..."
 	$(PIPENV_INSTALL) --dev --skip-lock
 	$(PIPENV_RUN) pre-commit install
@@ -91,7 +77,7 @@ setup: clean
 	@[ -e ".env" ] || cp -rf .env.example .env
 	@echo ${MESSAGE_HAPPY}
 
-environment: clean
+environment:
 	@echo "=====> loading virtualenv ${PYENV_NAME}..."
 	@pipenv --venv || $(PIPENV_INSTALL) --skip-lock --python=${PYTHON_VERSION}
 	@echo ${MESSAGE_HAPPY}
