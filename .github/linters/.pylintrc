@@ -310,7 +310,7 @@ int-import-graph=
 max-args=10
 
 # Argument names that match this expression will be ignored. Default to name
-# with leading underscore
+# with leading unders
 ignored-argument-names=_.*
 
 # Maximum number of locals for function / method body
