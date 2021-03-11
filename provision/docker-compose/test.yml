@@ -3,10 +3,9 @@
 #
 # Usage: test up
 
-version: '3.6'
 services:
   app:
-    image: zsh-docker-aliases-app-test
+    image: -app-test
     environment: &environment
       - STAGE=testing
     build:
