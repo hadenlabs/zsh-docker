@@ -1,6 +1,6 @@
 # How To Contribute
 
-Contributions to  are welcome.
+Contributions to are welcome.
 
 ## Getting Started
 

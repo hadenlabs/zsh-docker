@@ -4,5 +4,5 @@ If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install t
 
 1.  Go to your oh-my-zsh custom plugins directory -`cd ~/.oh-my-zsh/custom/plugins`
 2.  Clone the plugin `bash git clone https://github.com/hadenlabs/zsh-docker`bash
-3.  Edit your `.zshrc` and add `plugins=( ...  )` to your list of plugins
+3.  Edit your `.zshrc` and add `plugins=( ... )` to your list of plugins
 4.  Open a new terminal and enjoy!
