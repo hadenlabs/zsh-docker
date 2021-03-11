@@ -2,7 +2,7 @@
 
 @setup {
     PATH="/bin:/usr/bin:/usr/local/bin"
-	  load ../zsh-docker-aliases.zsh
+	  load ../zsh-docker.zsh
 }
 
 @teardown {
