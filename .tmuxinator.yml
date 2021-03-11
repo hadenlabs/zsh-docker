@@ -1,5 +1,5 @@
-# ~/.tmuxinator/zsh-docker-aliases.yml
-name: zsh-docker-aliases
+# ~/.tmuxinator/zsh-docker.yml
+name: zsh-docker
 root: ./
 # Optional tmux socket
 # socket_name: foo
