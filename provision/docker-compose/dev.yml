@@ -1,18 +1,18 @@
 # Docker Compose
 # https://docs.docker.com/compose/
-version: '3.6'
+
 services:
   # Python
   app:
     environment: &environment
       - STAGE=local
-    image: zsh-docker-aliases-app-dev
+    image: -app-dev
     build:
       args:
         stage: dev
 
   check:
-    image: zsh-docker-aliases-check-dev
+    image: -check-dev
     environment: *environment
     build:
       context: .

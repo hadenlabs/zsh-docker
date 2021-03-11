@@ -1,28 +1,13 @@
-FROM python:3.8.0-slim
-
-MAINTAINER Luis Mayta <@slovacus>
+FROM hadenlabs/python:3.8.0-slim
 
 ARG stage
 
-LABEL NAME zsh-docker-aliases-app-$stage
+LABEL NAME -app-$stage
 
 ENV USERNAME developer
 
 ENV PACKAGES bash \
-  git \
-  gcc \
-  libc-dev \
-  make \
-  musl-dev \
-  openssl \
-  gcc \
-  libgdal20 \
-  libev-dev \
-  curl \
-  wget \
-  tar \
-  zsh \
-  jq
+  openssl
 
 ENV ZUNIT_VERSION "0.8.2"
 
@@ -31,6 +16,7 @@ COPY Pipfile* /usr/src/
 # set working directory to /usr/src/
 WORKDIR /usr/src/
 
+# install packages
 RUN apt-get update -y \
   && apt-get install -y ${PACKAGES} --no-install-recommends \
 
@@ -50,12 +36,13 @@ RUN apt-get update -y \
   && mkdir -p /usr/src \
   && chown -R ${USERNAME} /usr/src \
 
-  # python
-  && pip3 install pipenv \
+
+# pipenv
+  && pip3 install --no-cache-dir pipenv \
   && pipenv install --dev --skip-lock \
   && pipenv shell --fancy \
 
-  # clean
+# clean
   && apt-get clean \
   && apt-get autoremove \
   && apt-get purge \
