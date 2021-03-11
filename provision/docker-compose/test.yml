@@ -5,7 +5,7 @@
 
 services:
   app:
-    image: -app-test
+    image: zsh-docker-app-test
     environment: &environment
       - STAGE=testing
     build:
