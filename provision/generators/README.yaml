@@ -14,22 +14,34 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'MIT'
+license: 'LGPL-3.0'
 
 # Canonical GitHub repo
 github_repo: hadenlabs/zsh-docker
 
 # Badges to display
 badges:
+  - name: GitHub tag (latest SemVer)
+    image: https://img.shields.io/github/v/tag/hadenlabs/zsh-docker?label=latest&sort=semver
+    url: https://github.com/hadenlabs/zsh-docker/releases
+  - name: Latest Release
+    image: https://img.shields.io/github/release/hadenlabs/zsh-docker
+    url: https://github.com/hadenlabs/zsh-docker/releases
   - name: Lint
-    image: https://github.com/hadenlabs/zsh-docker/actions/workflows/lint.yml/badge.svg?branch=develop
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-docker/lint-code
     url: https://github.com/hadenlabs/zsh-docker/actions
   - name: Issues
-    image: https://img.shields.io/github/issues/hadenlabs/zsh-docker.svg
+    image: https://img.shields.io/github/issues/hadenlabs/zsh-docker
     url: https://github.com/hadenlabs/zsh-docker/issues
-  - name: Latest Release
-    image: https://img.shields.io/github/release/hadenlabs/zsh-docker.svg
-    url: https://github.com/hadenlabs/zsh-docker/releases
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    url: https://keepachangelog.com
+  - name: Beacon
+    image: https://ga-beacon.appspot.com/G-MZEK48EGE8/zsh-docker/readme
+    url: https://github.com/hadenlabs/zsh-docker
 
 # Short description of this project
 description: |-
@@ -50,3 +62,6 @@ installation:
 
 include:
   - 'docs/functions.md'
+
+examples:
+  - 'docs/examples/common.md'
