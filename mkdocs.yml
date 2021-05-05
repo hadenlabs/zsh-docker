@@ -1,4 +1,4 @@
-site_name: Documentation
+site_name: zsh-docker Documentation
 theme: 'material'
 markdown_extensions:
   - toc:
