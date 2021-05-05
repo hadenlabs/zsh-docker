@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 function drmi_all {
-    docker rmi "$@" "$(docker images -a -q)"
+    docker images -q -f "dangling=true" | xargs docker image rm -f
 }
 
 function drmi_dang {
-    docker rmi "$@" "$(docker images -q -f "dangling=true")"
+    docker images -q -f "dangling=true" | xargs docker image rm -f
 }
 
 function dpsl {
@@ -18,23 +18,23 @@ function dip {
 }
 
 function dstop_all {
-    docker stop "$@" "$(docker ps -q -f "status=running")"
+    docker ps -q -f "status=running" | xargs docker stop
 }
 
 function drm_stopped {
-    docker rm "$@" "$(docker ps -q -f "status=exited")"
+    docker ps -q -f "status=exited" | xargs docker rm
 }
 
 function drmv_stopped {
-    docker rm -v "$@" "$(docker ps -q -f "status=exited")"
+    docker ps -q -f "status=exited" | xargs docker rm -v
 }
 
 function drm_all {
-    docker rm "$@" "$(docker ps -a -q)"
+    docker ps -a -q | xargs docker rm
 }
 
 function drmv_all {
-    docker rm -v "$@" "$(docker ps -a -q)"
+    docker ps -a -q | xargs docker rm -v
 }
 
 # volume
@@ -44,11 +44,11 @@ function dvls {
 }
 
 function dvrm_all {
-    docker volume rm "$(docker volume ls -q)"
+    docker volume ls -q | xargs docker volume rm
 }
 
 function dvrm_dang {
-    docker volume rm "$(docker volume ls -q -f "dangling=true")"
+    docker volume ls -q -f "dangling=true" | xargs docker volume rm
 }
 
 # clean up
@@ -60,21 +60,15 @@ function docker-clean-containers {
 }
 
 function docker-clean-images {
-    local list_images
-    list_images="$(docker image ls -a -q)"
-    docker image ls -a -q && docker image rm "${list_images}"
+    docker image ls -a -q | xargs docker image rm -f
 }
 
 function docker-clean-volumes {
-    local list_volumes
-    list_volumes="$(docker volume ls -q)"
-    docker volume ls -q && docker volume rm "${list_volumes}"
+    docker volume ls -q | xargs docker volume rm -f
 }
 
 function docker-clean-networks {
-    local list_networks
-    list_networks="$(docker network ls -q)"
-    docker network ls -q && docker network rm "${list_networks}"
+    docker network ls -q | xargs docker network rm -f
 }
 
 function docker-clean-unused {
@@ -82,7 +76,7 @@ function docker-clean-unused {
 }
 
 function docker-clean-images-dang {
-    docker rmi "$@" "$(docker images -q -f "dangling=true")"
+    docker images -q -f "dangling=true" | xargs docker rmi -f
 }
 
 function docker-clean-all {
@@ -94,9 +88,9 @@ function docker-clean-all {
 }
 
 function docker-containers-stop-all {
-    docker stop "$@" "$(docker ps -q -f "status=running")"
+    docker ps -q -f "status=running" | xargs docker stop
 }
 
 function docker-volumes-rm-dang {
-    docker volume rm "$(docker volume ls -q -f "dangling=true")"
+    docker volume ls -q -f "dangling=true" | xargs docker volume rm -f
 }
