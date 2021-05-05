@@ -13,20 +13,20 @@ function docker::clean::image::dangling {
     docker::internal::images::delete::dangling
 }
 
-function docker::proccess::list {
+function docker::process::list {
     docker::internal::procces::list
 }
 
-function docker::proccess::stop::all {
+function docker::process::stop::all {
     docker::internal::procces::stop::all
 }
 
-function docker::proccess::stop::exited {
+function docker::process::stop::exited {
     docker::internal::procces::stop::exited
 }
 
-function docker::clean::proccess::delete::all {
-    docker::internal::proccess::delete::all
+function docker::clean::process::delete::all {
+    docker::internal::process::delete::all
 }
 
 function docker::volume::delete::all {

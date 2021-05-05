@@ -80,19 +80,19 @@ docker clean image all
 
 docker clean image with filter `dangling`
 
-#### `docker::proccess::list`
+#### `docker::process::list`
 
 docker show list procces
 
-#### `docker::proccess::stop::all`
+#### `docker::process::stop::all`
 
 docker stop procces all
 
-#### `docker::proccess::stop::exited`
+#### `docker::process::stop::exited`
 
 docker stop procces with filter `exited`
 
-#### `docker::clean::proccess::delete::all`
+#### `docker::clean::process::delete::all`
 
 docker stop procces all
 

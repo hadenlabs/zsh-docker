@@ -29,7 +29,7 @@ function docker::internal::procces::stop::exited {
     docker ps -q -f "status=exited" | xargs docker rm
 }
 
-function docker::internal::proccess::delete::all {
+function docker::internal::process::delete::all {
     docker ps -a -q | xargs docker rm
 }
 
