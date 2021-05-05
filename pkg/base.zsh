@@ -1,96 +1,58 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-function drmi_all {
-    docker images -q -f "dangling=true" | xargs docker image rm -f
+function docker::clean::all {
+    docker::internal::clean::all
 }
 
-function drmi_dang {
-    docker images -q -f "dangling=true" | xargs docker image rm -f
+function docker::clean::image::all {
+    docker::internal::images::delete::all
 }
 
-function dpsl {
-    docker ps -l "$@"
+function docker::clean::image::dangling {
+    docker::internal::images::delete::dangling
 }
 
-function dip {
-    docker inspect --format "{{ .NetworkSettings.IPAddress }}" "$@"
+function docker::proccess::list {
+    docker::internal::procces::list
 }
 
-function dstop_all {
-    docker ps -q -f "status=running" | xargs docker stop
+function docker::proccess::stop::all {
+    docker::internal::procces::stop::all
 }
 
-function drm_stopped {
-    docker ps -q -f "status=exited" | xargs docker rm
+function docker::proccess::stop::exited {
+    docker::internal::procces::stop::exited
 }
 
-function drmv_stopped {
-    docker ps -q -f "status=exited" | xargs docker rm -v
+function docker::clean::proccess::delete::all {
+    docker::internal::proccess::delete::all
 }
 
-function drm_all {
-    docker ps -a -q | xargs docker rm
+function docker::volume::delete::all {
+    docker::internal::volume::delete::all
 }
 
-function drmv_all {
-    docker ps -a -q | xargs docker rm -v
+function docker::volume::list::all {
+    docker::internal::volume::list::all
 }
 
-# volume
-
-function dvls {
-    docker volume ls "$@"
+function docker::volume::delete::exited {
+    docker::internal::volume::delete::exited
 }
 
-function dvrm_all {
-    docker volume ls -q | xargs docker volume rm
+function docker::volume::delete::dangling {
+    docker::internal::volume::delete::dangling
 }
 
-function dvrm_dang {
-    docker volume ls -q -f "dangling=true" | xargs docker volume rm
+function docker::containers::delete::all {
+    docker::internal::containers::delete::all
 }
 
-# clean up
-function docker-clean-containers {
-    local list_containers
-    list_containers="$(docker container ls -a -q)"
-    docker container ls -a -q && docker container stop "${list_containers}"
-    docker container ls -a -q && docker container rm "${list_containers}"
+function docker::containers::stop::all {
+    docker::internal::containers::stop::all
 }
 
-function docker-clean-images {
-    docker image ls -a -q | xargs docker image rm -f
-}
-
-function docker-clean-volumes {
-    docker volume ls -q | xargs docker volume rm -f
-}
-
-function docker-clean-networks {
-    docker network ls -q | xargs docker network rm -f
-}
-
-function docker-clean-unused {
-    docker system prune --all --force --volumes
-}
-
-function docker-clean-images-dang {
-    docker images -q -f "dangling=true" | xargs docker rmi -f
-}
-
-function docker-clean-all {
-    local list_containers
-    list_containers="$(docker container ls -a -q)"
-    docker container ls -a -q \
-        && docker container stop "${list_containers}" \
-        && docker system prune -a -f --volumes
-}
-
-function docker-containers-stop-all {
-    docker ps -q -f "status=running" | xargs docker stop
-}
-
-function docker-volumes-rm-dang {
-    docker volume ls -q -f "dangling=true" | xargs docker volume rm -f
+function docker::networks::delete::all {
+    docker::internal::networks::delete::all
 }
