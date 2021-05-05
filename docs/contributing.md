@@ -1,6 +1,6 @@
 # How To Contribute
 
-Contributions to are welcome.
+Contributions to zsh-docker are welcome.
 
 ## Getting Started
 
