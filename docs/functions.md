@@ -46,11 +46,11 @@ docker volume delete with filter `exited`
 
 docker volume delete with filter `dangling`
 
-#### `docker::containers::delete::all`
+#### `docker::container::delete::all`
 
 docker container delete all
 
-#### `docker::containers::stop::all`
+#### `docker::container::stop::all`
 
 docker container stop all
 
