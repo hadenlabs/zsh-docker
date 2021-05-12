@@ -12,13 +12,27 @@
 
   -->
 
+ 
+
 # zsh-docker
+ [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/zsh-docker?label=latest&sort=semver)](https://github.com/hadenlabs/zsh-docker/releases) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-docker)](https://github.com/hadenlabs/zsh-docker/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-docker/lint-code)](https://github.com/hadenlabs/zsh-docker/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-docker)](https://github.com/hadenlabs/zsh-docker/issues) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/zsh-docker/readme)](https://github.com/hadenlabs/zsh-docker)
 
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/zsh-docker?label=latest&sort=semver)](https://github.com/hadenlabs/zsh-docker/releases) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-docker)](https://github.com/hadenlabs/zsh-docker/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-docker/lint-code)](https://github.com/hadenlabs/zsh-docker/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-docker)](https://github.com/hadenlabs/zsh-docker/issues) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/zsh-docker/readme)](https://github.com/hadenlabs/zsh-docker)
+ plugin for zsh. 
 
-plugin for zsh.
+
+
+
+
+
+
+
+
+
+
+
 
 ## Requirements
+
 
 This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
@@ -26,8 +40,9 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 https://github.com/luismayta/zsh-notify
 ```
 
-## Installation
 
+
+## Installation
 ### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) users
 
 If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install this plugin by doing the following:
@@ -36,7 +51,6 @@ If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install t
 2.  Clone the plugin `bash git clone https://github.com/hadenlabs/zsh-docker`bash
 3.  Edit your `.zshrc` and add `plugins=( ... zsh-docker )` to your list of plugins
 4.  Open a new terminal and enjoy!
-
 ### [antigen](https://github.com/zsh-users/antigen) users
 
 If you're using [Antigen](https://github.com/zsh-users/antigen), install this plugin by doing the following:
@@ -44,7 +58,6 @@ If you're using [Antigen](https://github.com/zsh-users/antigen), install this pl
 1.  Add `antigen bundle hadenlabs/zsh-docker` to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antigen bundle hadenlabs/zsh-docker` in a running zsh session.
 3.  Enjoy!
-
 ### [antibody](https://github.com/getantibody/antibody) users
 
 If you're using [Antibody](https://github.com/getantibody/antibody), install this plugin by doing the following:
@@ -60,11 +73,21 @@ to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle hadenlabs/zsh-docker` in a running zsh session.
 3.  Enjoy!
 
+
+
+
+
+
+
+
+
 ## Examples
 
 ### common
 
-## Functions
+
+
+ ## Functions
 
 zsh docker includes a small utility `docker`.
 
@@ -72,13 +95,41 @@ zsh docker includes a small utility `docker`.
 
 docker clean all
 
-#### `docker::clean::image::all`
+#### `docker::clean::dangling`
 
-docker clean image all
+docker clean dangling
 
-#### `docker::clean::image::dangling`
+#### `docker::clean::images::all`
 
-docker clean image with filter `dangling`
+docker clean images all
+
+#### `docker::clean::images::dangling`
+
+docker clean images with filter `dangling`
+
+#### `docker::clean::process::all`
+
+docker clean process all
+
+#### `docker::clean::process::dangling`
+
+docker clean process with filter `dangling`
+
+#### `docker::clean::volume::all`
+
+docker clean volume all
+
+#### `docker::clean::volume::dangling`
+
+docker clean volume with filter `dangling`
+
+#### `docker::clean::network::all`
+
+docker clean network all
+
+#### `docker::clean::network::dangling`
+
+docker clean network with filter `dangling`
 
 #### `docker::process::list`
 
@@ -112,17 +163,22 @@ docker volume delete with filter `exited`
 
 docker volume delete with filter `dangling`
 
-#### `docker::containers::delete::all`
+#### `docker::container::delete::all`
 
 docker container delete all
 
-#### `docker::containers::stop::all`
+#### `docker::container::stop::all`
 
 docker container stop all
 
-#### `docker::networks::delete::all`
+#### `docker::network::delete::all`
 
-docker networks delete all
+docker network delete all
+
+
+
+
+
 
 ## Help
 
@@ -160,20 +216,34 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ### Backwards compatibility in `0.0.z` and `0.y.z` version
 
-- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is increased. (Initial development)
-- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is increased. (Pre-release)
+- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is
+  increased. (Initial development)
+- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is
+  increased. (Pre-release)
+
+
+
 
 ## Copyright
 
 Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
 
+
+
 ## Trademarks
 
 All other trademarks referenced herein are the property of their respective owners.
 
+
+
+
+
+
 ## License
 
 The code and styles are licensed under the LGPL-3.0 license [See project license.](LICENSE).
+
+
 
 ## Don't forget to 🌟 Star 🌟 the repo if you like zsh-docker
 
