@@ -64,6 +64,10 @@ function docker::internal::containers::stop::all {
 
 # networs docker
 
-function docker::internal::networks::delete::all {
+function docker::internal::network::delete::all {
     docker network ls -q | xargs docker network rm -f
+}
+
+function docker::internal::network::delete::dangling {
+    docker network ls -q -f "dangling=true" | xargs docker network rm -f
 }
