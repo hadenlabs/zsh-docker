@@ -13,6 +13,30 @@ function docker::clean::image::dangling {
     docker::internal::images::delete::dangling
 }
 
+function docker::clean::process::all {
+    docker::internal::process::delete::all
+}
+
+function docker::clean::process::dangling {
+    docker::internal::process::delete::dangling
+}
+
+function docker::clean::volume::all {
+    docker::internal::volume::delete::all
+}
+
+function docker::clean::volume::dangling {
+    docker::internal::volume::delete::dangling
+}
+
+function docker::clean::network::all {
+    docker::internal::network::delete::all
+}
+
+function docker::clean::network::dangling {
+    docker::internal::network::delete::dangling
+}
+
 function docker::process::list {
     docker::internal::procces::list
 }
@@ -25,7 +49,7 @@ function docker::process::stop::exited {
     docker::internal::procces::stop::exited
 }
 
-function docker::clean::process::delete::all {
+function docker::process::delete::all {
     docker::internal::process::delete::all
 }
 
@@ -53,6 +77,6 @@ function docker::containers::stop::all {
     docker::internal::containers::stop::all
 }
 
-function docker::networks::delete::all {
-    docker::internal::networks::delete::all
+function docker::network::delete::all {
+    docker::internal::network::delete::all
 }
