@@ -54,6 +54,6 @@ docker container delete all
 
 docker container stop all
 
-#### `docker::networks::delete::all`
+#### `docker::network::delete::all`
 
-docker networks delete all
+docker network delete all
