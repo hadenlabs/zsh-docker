@@ -6,13 +6,41 @@ zsh docker includes a small utility `docker`.
 
 docker clean all
 
-#### `docker::clean::image::all`
+#### `docker::clean::dangling`
 
-docker clean image all
+docker clean dangling
 
-#### `docker::clean::image::dangling`
+#### `docker::clean::images::all`
 
-docker clean image with filter `dangling`
+docker clean images all
+
+#### `docker::clean::images::dangling`
+
+docker clean images with filter `dangling`
+
+#### `docker::clean::process::all`
+
+docker clean process all
+
+#### `docker::clean::process::dangling`
+
+docker clean process with filter `dangling`
+
+#### `docker::clean::volume::all`
+
+docker clean volume all
+
+#### `docker::clean::volume::dangling`
+
+docker clean volume with filter `dangling`
+
+#### `docker::clean::network::all`
+
+docker clean network all
+
+#### `docker::clean::network::dangling`
+
+docker clean network with filter `dangling`
 
 #### `docker::process::list`
 
