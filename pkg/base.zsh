@@ -5,36 +5,43 @@ function docker::clean::all {
     docker::internal::clean::all
 }
 
-function docker::clean::image::all {
-    docker::internal::images::delete::all
+function docker::clean::dangling {
+    docker::clean::images::dangling
+    docker::clean::process::dangling
+    docker::clean::volume::dangling
+    docker::clean::network::dangling
 }
 
-function docker::clean::image::dangling {
-    docker::internal::images::delete::dangling
+function docker::clean::images::all {
+    docker::images::delete::all
+}
+
+function docker::clean::images::dangling {
+    docker::images::delete::dangling
 }
 
 function docker::clean::process::all {
-    docker::internal::process::delete::all
+    docker::process::delete::all
 }
 
 function docker::clean::process::dangling {
-    docker::internal::process::delete::dangling
+    docker::process::delete::dangling
 }
 
 function docker::clean::volume::all {
-    docker::internal::volume::delete::all
+    docker::volume::delete::all
 }
 
 function docker::clean::volume::dangling {
-    docker::internal::volume::delete::dangling
+    docker::volume::delete::dangling
 }
 
 function docker::clean::network::all {
-    docker::internal::network::delete::all
+    docker::network::delete::all
 }
 
 function docker::clean::network::dangling {
-    docker::internal::network::delete::dangling
+    docker::network::delete::dangling
 }
 
 function docker::process::list {
@@ -69,14 +76,32 @@ function docker::volume::delete::dangling {
     docker::internal::volume::delete::dangling
 }
 
-function docker::containers::delete::all {
-    docker::internal::containers::delete::all
+function docker::container::delete::all {
+    docker::internal::container::delete::all
 }
 
-function docker::containers::stop::all {
-    docker::internal::containers::stop::all
+function docker::container::stop::all {
+    docker::internal::container::stop::all
+}
+
+function docker::container::delete::dangling {
+    docker::internal::container::delete::dangling
 }
 
 function docker::network::delete::all {
     docker::internal::network::delete::all
+}
+
+function docker::network::delete::dangling {
+    docker::internal::network::delete::dangling
+}
+
+# images docker
+
+function docker::images::delete::dangling {
+    docker::internal::images::delete::dangling
+}
+
+function docker::images::delete::all {
+    docker::internal::images::delete::all
 }

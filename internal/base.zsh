@@ -51,15 +51,19 @@ function docker::internal::volume::delete::dangling {
     docker volume ls -q -f "dangling=true" | xargs docker volume rm -f
 }
 
-# containers docker
+# container docker
 
-function docker::internal::containers::delete::all {
+function docker::internal::container::delete::all {
     docker container ls -a -q | xargs docker container stop
     docker container ls -a -q | xargs docker container rm
 }
 
-function docker::internal::containers::stop::all {
+function docker::internal::container::stop::all {
     docker ps -q -f "status=running" | xargs docker stop
+}
+
+function docker::internal::container::stop::dangling {
+    docker ps -q -f "dangling=true" | xargs docker stop
 }
 
 # networs docker
