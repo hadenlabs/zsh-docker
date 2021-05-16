@@ -7,7 +7,6 @@ function docker::clean::all {
 
 function docker::clean::dangling {
     docker::clean::images::dangling
-    docker::clean::process::dangling
     docker::clean::volume::dangling
     docker::clean::network::dangling
 }
