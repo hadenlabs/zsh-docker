@@ -71,7 +71,3 @@ function docker::internal::container::stop::dangling {
 function docker::internal::network::delete::all {
     docker network ls -q | xargs docker network rm -f
 }
-
-function docker::internal::network::delete::dangling {
-    docker network ls -q -f "dangling=true" | xargs docker network rm -f
-}

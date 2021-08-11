@@ -1,9 +1,0 @@
-#!/usr/bin/env zunit
-
-@setup {
-    PATH="/bin:/usr/bin:/usr/local/bin"
-	  load ../zsh-docker.zsh
-}
-
-@teardown {
-}
