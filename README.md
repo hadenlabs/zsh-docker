@@ -14,11 +14,14 @@
 
  
 
+
+
+
+ [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-docker)](https://github.com/hadenlabs/zsh-docker/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-docker/lint-code)](https://github.com/hadenlabs/zsh-docker/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/zsh-docker/readme)](https://github.com/hadenlabs/zsh-docker)
+
 # zsh-docker
- [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/zsh-docker?label=latest&sort=semver)](https://github.com/hadenlabs/zsh-docker/releases) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-docker)](https://github.com/hadenlabs/zsh-docker/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-docker/lint-code)](https://github.com/hadenlabs/zsh-docker/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-docker)](https://github.com/hadenlabs/zsh-docker/issues) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/zsh-docker/readme)](https://github.com/hadenlabs/zsh-docker)
 
  plugin for zsh. 
-
 
 
 
