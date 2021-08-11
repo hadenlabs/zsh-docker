@@ -21,18 +21,15 @@ github_repo: hadenlabs/zsh-docker
 
 # Badges to display
 badges:
-  - name: GitHub tag (latest SemVer)
-    image: https://img.shields.io/github/v/tag/hadenlabs/zsh-docker?label=latest&sort=semver
-    url: https://github.com/hadenlabs/zsh-docker/releases
   - name: Latest Release
     image: https://img.shields.io/github/release/hadenlabs/zsh-docker
     url: https://github.com/hadenlabs/zsh-docker/releases
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-docker/lint-code
-    url: https://github.com/hadenlabs/zsh-docker/actions
-  - name: Issues
-    image: https://img.shields.io/github/issues/hadenlabs/zsh-docker
-    url: https://github.com/hadenlabs/zsh-docker/issues
+    url: https://github.com/hadenlabs/zsh-docker/actions?workflow=lint-code
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
