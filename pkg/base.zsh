@@ -8,7 +8,6 @@ function docker::clean::all {
 function docker::clean::dangling {
     docker::clean::images::dangling
     docker::clean::volume::dangling
-    docker::clean::network::dangling
 }
 
 function docker::clean::images::all {
@@ -89,10 +88,6 @@ function docker::container::delete::dangling {
 
 function docker::network::delete::all {
     docker::internal::network::delete::all
-}
-
-function docker::network::delete::dangling {
-    docker::internal::network::delete::dangling
 }
 
 # images docker
