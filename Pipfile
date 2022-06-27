@@ -19,11 +19,9 @@ pydocstyle = "*"
 pygments = "*"
 pylint = "*"
 pymdown-extensions = "*"
+black = "*"
 
 [packages]
 
 [scripts]
 update = "pre-commit autoupdate"
-
-[requires]
-python_version = "3.8.0"
