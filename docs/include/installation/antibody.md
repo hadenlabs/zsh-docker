@@ -1,3 +1,13 @@
+<!-- Space: ZshDocker -->
+<!-- Parent: Project -->
+<!-- Title: Project Installation Antibody -->
+
+<!-- Label: ZshDocker -->
+<!-- Label: Project -->
+<!-- Label: Installation -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
+
 ### [antibody](https://github.com/getantibody/antibody) users
 
 If you're using [Antibody](https://github.com/getantibody/antibody), install this plugin by doing the following:
@@ -5,7 +15,7 @@ If you're using [Antibody](https://github.com/getantibody/antibody), install thi
 1.  Add :
 
 ```{.sourceCode .bash}
-     antibody bundle hadenlabs/zsh-docker
+antibody bundle hadenlabs/zsh-docker
 ```
 
 to your `.zshrc` where you're adding your other plugins.

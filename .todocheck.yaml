@@ -1,9 +1,0 @@
-origin: github.com/hadenlabs/zsh-docker
-issue_tracker: GITHUB
-auth:
-  type: none
-ignored:
-  - vendor/
-  - node_modules/
-custom_todos:
-  - '@fix'
