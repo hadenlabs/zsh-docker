@@ -1,6 +1,10 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
+function docker::internal::login {
+    echo -n "${DOCKERHUB_TOKEN}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
+}
+
 function docker::internal::clean::all {
     docker system prune --all --force --volumes
 }
