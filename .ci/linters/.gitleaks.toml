@@ -154,7 +154,7 @@ title = "gitleaks config"
 
 [[rules]]
     description = "Env Var"
-    regex = '''(?i)(apikey|secret|key|api|password|pass|pw|host)=[0-9a-zA-Z-_.{}]{4,120}'''
+    regex = '''(?i)(apikey|secret|key|api|password|pass)=[0-9a-zA-Z-_.{}]{4,120}'''
     tags = ["env"]
     [rules.allowlist]
         description = "ignore value fake"
@@ -170,10 +170,14 @@ title = "gitleaks config"
         description = "ignore emails"
         regexes = [
             '''[a-zA-Z0-9._%+-]+@users.noreply.github.com''',
+            '''[a-zA-Z0-9._%+-]+@yopmail.com''',
             '''git@github.com''',
             '''git@gitlab.com''',
             '''slovacus@gmail.com''',
+            '''luis@hadenlabs.com''',
+            '''security@hadenlabs.com''',
             '''hola@hadenlabs.com''',
+            '''hello@hadenlabs.com''',
             '''support@hadenlbas.com''',
             '''support@hadenlabs.com''',
             '''dum-u@hadenlabs.com''',
@@ -227,25 +231,38 @@ title = "gitleaks config"
 
 # Global allowlist
 [allowlist]
-    description = "files allowlists"
-    files = [
-      '''(.*?)(jpg|gif|doc|pdf|bin)$''',
-      '''^\.gitignore$''',
-      '''^\.gitleaks.toml$''',
-      '''^yarn.lock$''',
-    ]
-    commits = [
-      '''23cca16b66bc49d17d240a592e10f9554fad6c18''',
-      '''8ffcca9aeb07590f887e3e3c0afebc7fc1d5f8dd''',
-      '''c7ea51d7595d4a74715a9926f4a845680861daf2''',
-      '''f7e7b827d3252e1ae69f18be4bf2e4ad0d6c5453''',
-    ]
+  description = "Whitelisted files"
+  paths = [
+    '''^vendor/''',
+    '''^bower_components/''',
+    '''^public/''',
+    '''^node_modules/''',
+    '''^theme/''',
+  ]
+  files = [
+    '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
+    '''^\.gitignore$''',
+    '''^\.gitleaks.toml$''',
+    '''^yarn.lock$''',
+    '''^vendor/(.*?)$''',
+    '''^sonar-project.properties$''',
+    '''^node_modules/(.*?)$''',
+  ]
+  commits = [
+    '''5530b41269a24a0a680e78f0281eb28ef7cee591''',
+  ]
 
 [whitelist]
   description = "image and html allowlists"
-	files = [
+  files = [
     '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
+    '''^\.gitignore$''',
     '''^\.gitleaks.toml$''',
     '''^\.gitignore$''',
     '''^yarn.lock$''',
+    '''^sonar-project.properties$''',
+  ]
+  paths = [
+    '''^vendor/(.*?)$''',
+    '''^node_modules/(.*?)$''',
   ]
