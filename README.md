@@ -99,6 +99,10 @@ to your `.zshrc` where you're adding your other plugins.
 
 zsh docker includes a small utility `docker`.
 
+#### `docker::login`
+
+docker login using `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN`
+
 #### `docker::clean::all`
 
 docker clean all

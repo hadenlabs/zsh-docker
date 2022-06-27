@@ -1,6 +1,10 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
+function docker::login {
+    docker::internal::login
+}
+
 function docker::clean::all {
     docker::internal::clean::all
 }
