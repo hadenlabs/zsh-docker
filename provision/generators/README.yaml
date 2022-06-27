@@ -27,6 +27,12 @@ badges:
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-docker/lint-code
     url: https://github.com/hadenlabs/zsh-docker/actions?workflow=lint-code
+  - name: CI
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-docker/ci
+    url: https://github.com/hadenlabs/zsh-docker/actions?workflow=ci
+  - name: Test
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-docker/test
+    url: https://github.com/hadenlabs/zsh-docker/actions?workflow=test
   - name: pre-commit
     image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
     url: https://github.com/pre-commit/pre-commit
@@ -34,23 +40,21 @@ badges:
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
   - name: KeepAChangelog
-    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    image: https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange
     url: https://keepachangelog.com
-  - name: Beacon
-    image: https://ga-beacon.appspot.com/G-MZEK48EGE8/zsh-docker/readme
-    url: https://github.com/hadenlabs/zsh-docker
-
-# Short description of this project
-description: |-
-  plugin for zsh.
 
 requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  ```{bash}
-  https://github.com/luismayta/zsh-notify
-  ```
+  - [zsh-core](https://github.com/hadenlabs/zsh-core)
+  - [gomplate](https://github.com/hairyhenderson/gomplate)
+  - [python](https://www.python.org)
+  - [taskfile](https://github.com/go-task/task)
+
+# Short description of this project
+description: |-
+  zsh-docker for project
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
@@ -60,5 +64,5 @@ installation:
 include:
   - 'docs/functions.md'
 
-examples:
-  - 'docs/examples/common.md'
+usages:
+  - docs/usage.md
