@@ -14,10 +14,11 @@ function docker::pkg::main::factory {
         source "${ZSH_DOCKER_PATH}"/pkg/linux.zsh
       ;;
     esac
+    # shellcheck source=/dev/null
+    source "${ZSH_DOCKER_PATH}"/pkg/helper.zsh
 
     # shellcheck source=/dev/null
     source "${ZSH_DOCKER_PATH}"/pkg/alias.zsh
-
 }
 
 docker::pkg::main::factory

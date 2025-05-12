@@ -1,21 +1,32 @@
-<!-- Space: ZshDocker -->
-<!-- Parent: Project -->
+<!-- Space: Projects -->
+<!-- Parent: ZshDocker -->
 <!-- Title: Commands ZshDocker -->
-
 <!-- Label: ZshDocker -->
 <!-- Label: Project -->
 <!-- Label: Commands -->
 <!-- Include: disclaimer.md -->
 <!-- Include: ac:toc -->
 
-## Commands
+# Commands
+
+## Poetry
+
+## Taskfile
 
 ### Confluence
 
 #### Sync Markdown with confluence
 
 ```{.bash}
-task mark:sync
+task confluence:sync:all
+```
+
+### Python
+
+#### Format syntax code python with [black](https://github.com/psf/black)
+
+```{.bash}
+task python:fmt -- {{file_name or path}}
 ```
 
 ### Diagrams
@@ -24,6 +35,14 @@ task mark:sync
 
 ```{.bash}
 task diagrams:publish
+```
+
+### Mkdocs
+
+#### Generate Website
+
+```{.bash}
+task docs:build
 ```
 
 ### Changelog
@@ -58,4 +77,18 @@ task version:minor
 
 ```{.bash}
 task version:patch
+```
+
+### Docs
+
+#### build
+
+```{.bash}
+task docs:build
+```
+
+#### server
+
+```{.bash}
+task docs:serve
 ```

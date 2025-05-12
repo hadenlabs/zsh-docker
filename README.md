@@ -29,10 +29,9 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 
 ## Installation
 
-<!-- Space: ZshDocker -->
-<!-- Parent: Project -->
-<!-- Title: Project Installation Oh-My-Zsh -->
-
+<!-- Space: Projects -->
+<!-- Parent: ZshDocker -->
+<!-- Title: Installation Oh-My-Zsh ZshDocker -->
 <!-- Label: ZshDocker -->
 <!-- Label: Project -->
 <!-- Label: Installation -->
@@ -48,16 +47,15 @@ If you're using [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), install this pl
 2.  Clone the plugin `bash git clone https://github.com/hadenlabs/zsh-docker`bash
 3.  Edit your `.zshrc` and add `plugins=( ... zsh-docker )` to your list of plugins
 4.  Open a new terminal and enjoy!
-    <!-- Space: ZshDocker -->
-    <!-- Parent: Project -->
-    <!-- Title: Project Installation Antigen -->
-
-<!-- Label: ZshDocker -->
-<!-- Label: Project -->
-<!-- Label: Installation -->
-<!-- Label: Antigen -->
-<!-- Include: docs/disclaimer.md -->
-<!-- Include: ac:toc -->
+    <!-- Space: Projects -->
+    <!-- Parent: ZshDocker -->
+    <!-- Title: Installation Antigen ZshDocker -->
+    <!-- Label: ZshDocker -->
+    <!-- Label: Project -->
+    <!-- Label: Installation -->
+    <!-- Label: Antigen -->
+    <!-- Include: docs/disclaimer.md -->
+    <!-- Include: ac:toc -->
 
 ### [antigen](https://github.com/zsh-users/antigen) users
 
@@ -66,21 +64,20 @@ If you're using [Antigen](https://github.com/zsh-users/antigen), install this pl
 1.  Add `antigen bundle hadenlabs/zsh-docker` to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antigen bundle hadenlabs/zsh-docker` in a running zsh session.
 3.  Enjoy!
-    <!-- Space: ZshDocker -->
-    <!-- Parent: Project -->
-    <!-- Title: Project Installation Antibody -->
-
-<!-- Label: ZshDocker -->
-<!-- Label: Project -->
-<!-- Label: Installation -->
-<!-- Include: docs/disclaimer.md -->
-<!-- Include: ac:toc -->
+    <!-- Space: Projects -->
+    <!-- Parent: ZshDocker -->
+    <!-- Title: Installation Antibody ZshDocker -->
+    <!-- Label: ZshDocker -->
+    <!-- Label: Project -->
+    <!-- Label: Installation -->
+    <!-- Include: docs/disclaimer.md -->
+    <!-- Include: ac:toc -->
 
 ### [antibody](https://github.com/getantibody/antibody) users
 
 If you're using [Antibody](https://github.com/getantibody/antibody), install this plugin by doing the following:
 
-1.  Add :
+1. Add :
 
 ```{.sourceCode .bash}
 antibody bundle hadenlabs/zsh-docker
@@ -88,104 +85,42 @@ antibody bundle hadenlabs/zsh-docker
 
 to your `.zshrc` where you're adding your other plugins.
 
-2.  Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle hadenlabs/zsh-docker` in a running zsh session.
-3.  Enjoy!
+2. Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle hadenlabs/zsh-docker` in a running zsh session.
+3. Enjoy!
 
 ## Usage
 
-# How to use this project
+# 🚀 How to use this project
+
+```bash
+task setup
+```
+
+## Examples
+
+<!-- Space: Projects -->
+<!-- Parent: ZshDocker -->
+<!-- Title: Examples ZshDocker -->
+<!-- Label: Examples -->
+<!-- Include: ./../disclaimer.md -->
+<!-- Include: ac:toc -->
+
+## Common
+
+### Install Dependencies
+
+```bash
+task setup
+```
+
+ <!-- Space: Projects -->
+<!-- Parent: ZshDocker -->
+<!-- Title: Functions ZshDocker -->
+<!-- Label: Functions -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
 
 ## Functions
-
-zsh docker includes a small utility `docker`.
-
-#### `docker::login`
-
-docker login using `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN`
-
-#### `docker::clean::all`
-
-docker clean all
-
-#### `docker::clean::dangling`
-
-docker clean dangling
-
-#### `docker::clean::images::all`
-
-docker clean images all
-
-#### `docker::clean::images::dangling`
-
-docker clean images with filter `dangling`
-
-#### `docker::clean::process::all`
-
-docker clean process all
-
-#### `docker::clean::process::dangling`
-
-docker clean process with filter `dangling`
-
-#### `docker::clean::volume::all`
-
-docker clean volume all
-
-#### `docker::clean::volume::dangling`
-
-docker clean volume with filter `dangling`
-
-#### `docker::clean::network::all`
-
-docker clean network all
-
-#### `docker::clean::network::dangling`
-
-docker clean network with filter `dangling`
-
-#### `docker::process::list`
-
-docker show list procces
-
-#### `docker::process::stop::all`
-
-docker stop procces all
-
-#### `docker::process::stop::exited`
-
-docker stop procces with filter `exited`
-
-#### `docker::clean::process::delete::all`
-
-docker stop procces all
-
-#### `docker::volume::delete::all`
-
-docker volume delete all
-
-#### `docker::volume::list::all`
-
-docker volume list all
-
-#### `docker::volume::delete::exited`
-
-docker volume delete with filter `exited`
-
-#### `docker::volume::delete::dangling`
-
-docker volume delete with filter `dangling`
-
-#### `docker::container::delete::all`
-
-docker container delete all
-
-#### `docker::container::stop::all`
-
-docker container stop all
-
-#### `docker::network::delete::all`
-
-docker network delete all
 
 ## Help
 
@@ -214,7 +149,7 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ## Copyright
 
-Copyright © 2018-2022 [Hadenlabs](https://hadenlabs.com)
+Copyright © 2018-2025 [Hadenlabs](https://hadenlabs.com)
 
 ## Trademarks
 

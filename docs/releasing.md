@@ -1,7 +1,6 @@
 <!-- Space: Projects -->
 <!-- Parent: ZshDocker -->
 <!-- Title: Releasing ZshDocker -->
-
 <!-- Label: ZshDocker -->
 <!-- Label: Project -->
 <!-- Label: Releasing -->

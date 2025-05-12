@@ -1,7 +1,6 @@
-<!-- Space: ZshDocker -->
-<!-- Parent: Project -->
-<!-- Title: Project Installation Oh-My-Zsh -->
-
+<!-- Space: Projects -->
+<!-- Parent: ZshDocker -->
+<!-- Title: Installation Oh-My-Zsh ZshDocker -->
 <!-- Label: ZshDocker -->
 <!-- Label: Project -->
 <!-- Label: Installation -->

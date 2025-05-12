@@ -3,6 +3,7 @@
 .serverless_nextjs
 node_modules
 dist
+build
 package.json
 package-lock.json
 coverage
@@ -15,6 +16,15 @@ terraform.md
 *.tpl.md
 *.enc.yaml
 vendor
+public
+staticfiles
 out
 .vscode-test
+.cache
 .venv
+.task
+contrib/
+site/
+.external_modules
+CHANGELOG.md
+charts

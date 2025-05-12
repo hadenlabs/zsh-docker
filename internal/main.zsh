@@ -14,6 +14,8 @@ function docker::internal::main::factory {
         source "${ZSH_DOCKER_PATH}"/internal/linux.zsh
       ;;
     esac
+    # shellcheck source=/dev/null
+    source "${ZSH_DOCKER_PATH}"/internal/helper.zsh
 }
 
 docker::internal::main::factory

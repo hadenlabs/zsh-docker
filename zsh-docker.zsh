@@ -9,7 +9,7 @@
 #  - zsh: https://www.zsh.org/
 #
 # Authors:
-#   Luis Mayta <slovacus@gmail.com>
+#   Luis Mayta <luis@hadenlabs.com>
 #
 # shellcheck disable=SC2034  # Unused variables left for readability
 ZSH_DOCKER_PATH=$(dirname "${0}")
