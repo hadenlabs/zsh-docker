@@ -19,3 +19,5 @@ function docker::internal::main::factory {
 }
 
 docker::internal::main::factory
+
+if ! core::exists docker; then docker::internal::install; fi

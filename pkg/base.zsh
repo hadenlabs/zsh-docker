@@ -47,15 +47,15 @@ function docker::clean::network::dangling {
 }
 
 function docker::process::list {
-    docker::internal::procces::list
+    docker::internal::process::list
 }
 
 function docker::process::stop::all {
-    docker::internal::procces::stop::all
+    docker::internal::process::stop::all
 }
 
 function docker::process::stop::exited {
-    docker::internal::procces::stop::exited
+    docker::internal::process::stop::exited
 }
 
 function docker::process::delete::all {

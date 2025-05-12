@@ -21,15 +21,15 @@ function docker::internal::images::delete::all {
 
 # process docker
 
-function docker::internal::procces::list {
+function docker::internal::process::list {
     docker ps -l "$@"
 }
 
-function docker::internal::procces::stop::all {
+function docker::internal::process::stop::all {
     docker ps -q -f "status=running" | xargs docker stop
 }
 
-function docker::internal::procces::stop::exited {
+function docker::internal::process::stop::exited {
     docker ps -q -f "status=exited" | xargs docker rm
 }
 
@@ -74,4 +74,10 @@ function docker::internal::container::stop::dangling {
 
 function docker::internal::network::delete::all {
     docker network ls -q | xargs docker network rm -f
+}
+
+function docker::internal::install {
+    message_info "Installing ${ZSH_DOCKER_PACKAGE_NAME}"
+    core::install orbstack
+    message_success "Installed ${ZSH_DOCKER_PACKAGE_NAME}"
 }
