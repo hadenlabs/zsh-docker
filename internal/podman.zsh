@@ -11,8 +11,6 @@ function container::internal::container::install {
 }
 
 function container::internal::container::load {
-  set -euo pipefail
-
   local machine_name="${ZSH_DOCKER_PODMAN_MACHINE_NAME:-podman-machine-default}"
 
   # Check if jq is installed
@@ -36,7 +34,5 @@ function container::internal::container::load {
   if [[ "${running}" != "true" ]]; then
     echo "🚀 Podman machine '${machine_name}' exists but is not running. Starting..."
     podman machine start "${machine_name}"
-  else
-    echo "✅ Podman machine '${machine_name}' is already running."
   fi
 }
