@@ -45,8 +45,16 @@
 {{ if has (ds "config") "features" }}
 
 ## Features
+
 {{ range $feature := (ds "config").features }}{{printf "- %s\n" $feature}}{{ end }}
+
 {{ end }}
+
+{{ if has (ds "config") "modules" }}
+
+## Modules
+
+{{ range $module := (ds "config").modules }}{{printf "- %s\n" $module}}{{ end }} {{ end }}
 
 {{ if has (ds "config") "introduction" }}
 
@@ -127,7 +135,8 @@ For additional context, refer to some of these links.
 
 ## Help
 
-**Got a question?**
+### Got a question?
+
 {{ if has (ds "config") "github_repo" }}
 File a GitHub [issue]({{ printf "https://github.com/%s/issues" (ds "config").github_repo}}).
 {{ else if has (ds "config") "gitlab_host" }}

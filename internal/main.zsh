@@ -14,10 +14,22 @@ function docker::internal::main::factory {
         source "${ZSH_DOCKER_PATH}"/internal/linux.zsh
       ;;
     esac
+
+    case "${ZSH_DOCKER_CONTAINER_APP_NAME}" in
+    podman*)
+        # shellcheck source=/dev/null
+        source "${ZSH_DOCKER_PATH}"/internal/podman.zsh
+        ;;
+      docker*)
+        # shellcheck source=/dev/null
+        source "${ZSH_DOCKER_PATH}"/internal/docker.zsh
+      ;;
+    esac
     # shellcheck source=/dev/null
     source "${ZSH_DOCKER_PATH}"/internal/helper.zsh
 }
 
 docker::internal::main::factory
 
-if ! core::exists docker; then docker::internal::install; fi
+container::internal::container::install
+container::internal::container::load

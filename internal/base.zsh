@@ -75,9 +75,3 @@ function docker::internal::container::stop::dangling {
 function docker::internal::network::delete::all {
     docker network ls -q | xargs docker network rm -f
 }
-
-function docker::internal::install {
-    message_info "Installing ${ZSH_DOCKER_PACKAGE_NAME}"
-    core::install orbstack
-    message_success "Installed ${ZSH_DOCKER_PACKAGE_NAME}"
-}
