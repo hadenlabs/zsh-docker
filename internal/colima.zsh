@@ -27,15 +27,11 @@ function container::internal::container::load {
   check_command jq || return 1
   check_command colima || return 1
 
-  local colima_status
-  if ! colima_status=$(colima status --json 2>/dev/null | jq -r '.status'); then
-    echo "⚠️ Could not get Colima status. Starting Colima..."
-    colima start
-    return
-  fi
+  local docker_socket
+  docker_socket=$(colima status --json 2>/dev/null | jq -r '.docker_socket // empty')
 
-  if [[ "$colima_status" != "Running" ]]; then
-    echo "🚀 Colima is not running. Starting Colima..."
+  if [[ -z "$docker_socket" ]]; then
+    echo "🚀 Colima does not seem to be running (docker_socket is empty). Starting Colima..."
     colima start
   fi
 }
