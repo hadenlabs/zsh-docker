@@ -16,7 +16,11 @@ function docker::config::main::factory {
     esac
 
     case "${ZSH_DOCKER_CONTAINER_APP_NAME}" in
-    podman*)
+      lima*)
+        # shellcheck source=/dev/null
+        source "${ZSH_DOCKER_PATH}"/config/lima.zsh
+        ;;
+      podman*)
         # shellcheck source=/dev/null
         source "${ZSH_DOCKER_PATH}"/config/podman.zsh
         ;;
