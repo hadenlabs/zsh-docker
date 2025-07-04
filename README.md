@@ -124,7 +124,7 @@ task setup
 
 ## Help
 
-**Got a question?**
+### Got a question?
 
 File a GitHub [issue](https://github.com/hadenlabs/zsh-docker/issues).
 
