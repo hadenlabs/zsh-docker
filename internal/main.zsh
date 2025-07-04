@@ -16,6 +16,10 @@ function docker::internal::main::factory {
     esac
 
     case "${ZSH_DOCKER_CONTAINER_APP_NAME}" in
+      colima*)
+        # shellcheck source=/dev/null
+        source "${ZSH_DOCKER_PATH}"/internal/colima.zsh
+        ;;
       lima*)
         # shellcheck source=/dev/null
         source "${ZSH_DOCKER_PATH}"/internal/lima.zsh
