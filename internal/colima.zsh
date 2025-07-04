@@ -27,14 +27,14 @@ function container::internal::container::load {
   check_command jq || return 1
   check_command colima || return 1
 
-  local status
-  if ! status=$(colima status --json 2>/dev/null | jq -r '.status'); then
+  local colima_status
+  if ! colima_status=$(colima status --json 2>/dev/null | jq -r '.status'); then
     echo "⚠️ Could not get Colima status. Starting Colima..."
     colima start
     return
   fi
 
-  if [[ "$status" != "Running" ]]; then
+  if [[ "$colima_status" != "Running" ]]; then
     echo "🚀 Colima is not running. Starting Colima..."
     colima start
   fi
