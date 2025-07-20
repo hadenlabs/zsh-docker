@@ -31,6 +31,10 @@ function docker::config::main::factory {
       docker*)
         # shellcheck source=/dev/null
         source "${ZSH_DOCKER_PATH}"/config/docker.zsh
+        ;;
+      orbstack*)
+        # shellcheck source=/dev/null
+        source "${ZSH_DOCKER_PATH}"/config/orbstack.zsh
       ;;
     esac
 }

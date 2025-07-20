@@ -31,6 +31,10 @@ function docker::internal::main::factory {
       docker*)
         # shellcheck source=/dev/null
         source "${ZSH_DOCKER_PATH}"/internal/docker.zsh
+        ;;
+      orbstack*)
+        # shellcheck source=/dev/null
+        source "${ZSH_DOCKER_PATH}"/internal/orbstack.zsh
       ;;
     esac
     # shellcheck source=/dev/null
