@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 export ZSH_DOCKER_PACKAGE_NAME=docker
-export ZSH_DOCKER_CONTAINER_APP_NAME="${JASPER_CONTAINER_APP_NAME:-lima}"
+export ZSH_DOCKER_CONTAINER_APP_NAME="${JASPER_CONTAINER_APP_NAME:-orbstack}"
 export ZSH_DOCKER_PODMAN_MACHINE_NAME="podman-machine-default"
 export ZSH_DOCKER_LIMA_MACHINE_NAME="default"
 export ZSH_DOCKER_MESSAGE_BREW="Please install brew or use antibody bundle hadenlabs/zsh-brew"
